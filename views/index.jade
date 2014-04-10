@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  h1= title
+  - if (name)
+    p Welcome back to #{title}, #{name}!
+  - else
+    p Welcome to #{title}!
+  //
+    if action is the empty string, the browser will POST to the SAME LOCATION it
+    is already at. If the form is displayed at /, and the action attribute is
+    empty, the form will on submit be POSTed to /.
+  form(action="", method="post")
+      table
+          tr
+              td
+                  label(for="name")
+                    | What is your name?
+              td
+                  input(name="name", type="text")
+          tr
+              td
+                  input(type="submit")
+
