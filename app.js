@@ -12,6 +12,7 @@ app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(express.favicon());
+app.locals.pretty = true;
 
 // This is the middleware that parses a POST body to we can see the form fields.
 // It is usually included as a default.
